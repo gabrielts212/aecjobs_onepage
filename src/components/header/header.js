@@ -1,7 +1,7 @@
 import { useState } from "react";
-
 import Image from "next/image";
 import CustomLink from "../../components/link/link";
+import Link from "next/link";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,21 +14,31 @@ const Header = () => {
     <header className="bg-white shadow">
       <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
         <div className="flex items-center space-x-4">
-          <CustomLink to="/" passHref>
-            <div
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center"
-            >
-              <Image src="/Imageheader.png" alt="Logo" width={80} height={80} />
-              <div className="flex flex-col ml-2">
-                <span className="text-blue-700 text-sm">
-                  Relacionamento com
-                </span>
-                <span className="text-blue-700 text-sm">Responsabilidade</span>
+          <Link href="/" >
+            <div>
+              <div
+                as="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+              >
+                <Image
+                  src="/Imageheader.png"
+                  alt="Logo"
+                  width={80}
+                  height={80}
+                />
+                <div className="flex flex-col ml-2">
+                  <span className="text-blue-700 text-sm">
+                    Relacionamento com
+                  </span>
+                  <span className="text-blue-700 text-sm">
+                    Responsabilidade
+                  </span>
+                </div>
               </div>
             </div>
-          </CustomLink>
+          </Link>
         </div>
 
         <div className="md:hidden">
@@ -53,14 +63,36 @@ const Header = () => {
           </button>
         </div>
 
-        <div
-          className={`${
-            menuOpen ? "block" : "hidden"
-          } md:flex md:flex-row space-y-4 md:space-y-0 md:space-x-8 md:items-center  mt-4 md:mt-0 relative`}
-        >
+        <div className="hidden md:flex md:space-x-8">
+          <CustomLink to="/">
+            <p className="text-blue-900 text-lg font-semibold">
+              Vagas de Atendimento
+            </p>
+          </CustomLink>
+
+          <CustomLink to="/" >
+            <p className="text-blue-900 text-lg font-semibold">Quem somos</p>
+          </CustomLink>
+        </div>
+      </div>
+
+      {menuOpen && (
+        <div className="fixed inset-0 z-50 flex flex-col bg-white">
+          <div className="flex flex-col items-center justify-start h-full pt-20 space-y-4">
+            <CustomLink to="/">
+              <p className="text-blue-900 text-lg font-semibold">
+                Vagas de Atendimento
+              </p>
+            </CustomLink>
+
+            <CustomLink to="/">
+              <p className="text-blue-900 text-lg font-semibold">Quem somos</p>
+            </CustomLink>
+          </div>
+
           <button
             onClick={toggleMenu}
-            className="absolute top-0 right-0 md:hidden text-blue-900 text-lg font-semibold focus:outline-none mt-4 mr-4"
+            className="absolute bottom-10 self-center text-blue-900 text-lg font-semibold focus:outline-none"
           >
             <svg
               className="w-6 h-6"
@@ -77,18 +109,8 @@ const Header = () => {
               />
             </svg>
           </button>
-
-          <CustomLink to="/">
-            <p className="text-blue-900 text-lg font-semibold">
-              Vagas de Atendimento
-            </p>
-          </CustomLink>
-
-          <CustomLink to="/">
-            <p className="text-blue-900 text-lg font-semibold">Quem somos</p>
-          </CustomLink>
         </div>
-      </div>
+      )}
     </header>
   );
 };

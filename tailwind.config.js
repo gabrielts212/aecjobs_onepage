@@ -9,11 +9,11 @@ module.exports = {
     extend: {
       colors: {
         customBlue: '#80DEF2',
-        customText: '#003F5F', 
+        customText1: '#003F5F',
+        customText2: '#005DAA', 
+        customText3: '#003F5F', 
       },
-      fontFamily: {
-        'segoe-ui': ['Segoe UI', 'Arial', 'sans-serif'],
-      },
+      
     },
   },
   plugins: [],
