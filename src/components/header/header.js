@@ -14,14 +14,9 @@ const Header = () => {
     <header className="bg-white shadow">
       <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
         <div className="flex items-center space-x-4">
-          <Link href="/" >
+          <Link href="/">
             <div>
-              <div
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center"
-              >
+              <div className="flex items-center">
                 <Image
                   src="/Imageheader.png"
                   alt="Logo"
@@ -64,14 +59,17 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex md:space-x-8">
-          <CustomLink to="/">
-            <p className="text-blue-900 text-lg font-semibold">
-              Vagas de Atendimento
-            </p>
+          <CustomLink
+            to="https://sou.aec.com.br/"
+            className="text-blue-900 text-lg font-semibold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vagas de Atendimento
           </CustomLink>
 
-          <CustomLink to="/" >
-            <p className="text-blue-900 text-lg font-semibold">Quem somos</p>
+          <CustomLink to="/" className="text-blue-900 text-lg font-semibold">
+            Quem somos
           </CustomLink>
         </div>
       </div>
@@ -79,14 +77,17 @@ const Header = () => {
       {menuOpen && (
         <div className="fixed inset-0 z-50 flex flex-col bg-white">
           <div className="flex flex-col items-center justify-start h-full pt-20 space-y-4">
-            <CustomLink to="/">
-              <p className="text-blue-900 text-lg font-semibold">
-                Vagas de Atendimento
-              </p>
+            <CustomLink
+              to="/"
+              className="text-blue-900 text-lg font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vagas de Atendimento
             </CustomLink>
 
-            <CustomLink to="/">
-              <p className="text-blue-900 text-lg font-semibold">Quem somos</p>
+            <CustomLink to="/" className="text-blue-900 text-lg font-semibold">
+              Quem somos
             </CustomLink>
           </div>
 

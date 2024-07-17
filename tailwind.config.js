@@ -12,8 +12,14 @@ module.exports = {
         customText1: '#003F5F',
         customText2: '#005DAA', 
         customText3: '#003F5F', 
+        customText4: '#378DFF', 
+        hoverBlue: '#003F5F',
       },
-      
+    },
+  },
+  variants: {
+    extend: {
+      borderColor: ['hover'],
     },
   },
   plugins: [],

@@ -1,14 +1,15 @@
 import CustomLink from "../../components/link/link";
 import Image from "next/image";
-
+// import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-customBlue shadow">
       <div className="container mx-auto py-4 px-4 md:px-8">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
           <div className="flex justify-center space-x-4 md:hidden">
-            <a as="span" 
-              href="https://facebook.com"
+            <CustomLink
+              to="https://facebook.com"
+              
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-900"
@@ -19,10 +20,11 @@ const Footer = () => {
                 width={28}
                 height={28}
               />
-            </a>
+            </CustomLink>
 
-            <a as="span"
-              href="https://instagram.com"
+            <CustomLink
+              to="https://instagram.com"
+             
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -32,10 +34,11 @@ const Footer = () => {
                 width={28}
                 height={28}
               />
-            </a>
+            </CustomLink>
 
-            <a as="span"
-              href="https://youtube.com"
+            <CustomLink
+              to="https://youtube.com"
+             
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -45,9 +48,10 @@ const Footer = () => {
                 width={28}
                 height={28}
               />
-            </a>
-            <a as="span"
-              href="https://linkedin.com"
+            </CustomLink>
+            <CustomLink
+              to="https://linkedin.com"
+              
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -57,7 +61,7 @@ const Footer = () => {
                 width={28}
                 height={28}
               />
-            </a>
+            </CustomLink>
           </div>
 
           <div className="text-blue-900 text-lg font-semibold text-center md:hidden">
@@ -67,7 +71,7 @@ const Footer = () => {
           <div className="flex justify-center md:justify-start items-center space-x-4 mb-4 md:mb-0">
             <CustomLink to="/" passHref>
               <div
-                target="_blank"
+                
                 rel="noopener noreferrer"
                 className="flex items-center"
               >
@@ -94,8 +98,9 @@ const Footer = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a as="span"
-              href="https://facebook.com"
+            <CustomLink
+              to="https://facebook.com"
+              
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-900"
@@ -106,9 +111,10 @@ const Footer = () => {
                 width={28}
                 height={28}
               />
-            </a>
-            <a as="span"
-              href="https://instagram.com"
+            </CustomLink>
+            <CustomLink
+              to="https://instagram.com"
+             
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -118,9 +124,11 @@ const Footer = () => {
                 width={28}
                 height={28}
               />
-            </a>
-            <a as="span"
-              href="https://youtube.com"
+            </CustomLink>
+            <CustomLink
+              
+              to="https://youtube.com"
+             
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -130,19 +138,23 @@ const Footer = () => {
                 width={28}
                 height={28}
               />
-            </a>
-            <a as="span"
-              href="https://linkedin.com"
+            </CustomLink>
+            <CustomLink
+              to="https://linkedin.com"
+              // className="text-blue-900 text-lg font-semibold"
               target="_blank"
               rel="noopener noreferrer"
+              
             >
-              <Image
-                src="/Iconlinkedin.png"
-                alt="Linkedin"
-                width={28}
-                height={28}
-              />
-            </a>
+             
+            <Image
+              src="/Iconlinkedin.png"
+              alt="Linkedin"
+              width={28}
+              height={28}
+            />
+            </CustomLink>
+            
           </div>
         </div>
       </div>
