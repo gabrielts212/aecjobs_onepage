@@ -1,6 +1,6 @@
 import CustomLink from "../../components/link/link";
 import Image from "next/image";
-// import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer className="bg-customBlue shadow">
@@ -9,7 +9,6 @@ const Footer = () => {
           <div className="flex justify-center space-x-4 md:hidden">
             <CustomLink
               to="https://facebook.com"
-              
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-900"
@@ -24,7 +23,6 @@ const Footer = () => {
 
             <CustomLink
               to="https://instagram.com"
-             
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -38,7 +36,6 @@ const Footer = () => {
 
             <CustomLink
               to="https://youtube.com"
-             
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -51,7 +48,6 @@ const Footer = () => {
             </CustomLink>
             <CustomLink
               to="https://linkedin.com"
-              
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -70,11 +66,7 @@ const Footer = () => {
 
           <div className="flex justify-center md:justify-start items-center space-x-4 mb-4 md:mb-0">
             <CustomLink to="/" passHref>
-              <div
-                
-                rel="noopener noreferrer"
-                className="flex items-center"
-              >
+              <div rel="noopener noreferrer" className="flex items-center">
                 <Image
                   src="/Imagefooter.png"
                   alt="Logo"
@@ -100,7 +92,6 @@ const Footer = () => {
           <div className="hidden md:flex items-center space-x-4">
             <CustomLink
               to="https://facebook.com"
-              
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-900"
@@ -114,7 +105,6 @@ const Footer = () => {
             </CustomLink>
             <CustomLink
               to="https://instagram.com"
-             
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -126,9 +116,7 @@ const Footer = () => {
               />
             </CustomLink>
             <CustomLink
-              
               to="https://youtube.com"
-             
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -141,20 +129,16 @@ const Footer = () => {
             </CustomLink>
             <CustomLink
               to="https://linkedin.com"
-              // className="text-blue-900 text-lg font-semibold"
               target="_blank"
               rel="noopener noreferrer"
-              
             >
-             
-            <Image
-              src="/Iconlinkedin.png"
-              alt="Linkedin"
-              width={28}
-              height={28}
-            />
+              <Image
+                src="/Iconlinkedin.png"
+                alt="Linkedin"
+                width={28}
+                height={28}
+              />
             </CustomLink>
-            
           </div>
         </div>
       </div>

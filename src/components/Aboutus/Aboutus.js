@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Aboutus = () => {
   return (
@@ -18,17 +20,21 @@ const Aboutus = () => {
           em relacionamento e responsabilidade.
         </p>
         <p className="text-xl mb-4 text-left text-customText3">
-          Desde 2020, somos certificados pela Great Place to Work como uma 
-          das <strong className="text-customText3">Melhores Empresas</strong>   para se trabalhar. E continuamos crescendo: em 2023,
-          mais de 5.000 promoções internas demonstram nossa aposta em você e
-          confiança no seu crescimento profissional.
+          Desde 2020, somos certificados pela Great Place to Work como uma das{" "}
+          <strong className="text-customText3">Melhores Empresas</strong> para
+          se trabalhar. E continuamos crescendo: em 2023, mais de 5.000
+          promoções internas demonstram nossa aposta em você e confiança no seu
+          crescimento profissional.
         </p>
         <p className="text-xl mb-4 text-left text-customText3">
-          Aqui, seu plano de carreira começa após apenas 90 dias de trabalho.<strong className="text-customText3">Com ou sem experiência, venha ser AeC!</strong> 
-          
+          Aqui, seu plano de carreira começa após apenas 90 dias de trabalho.
+          <strong className="text-customText3">
+            Com ou sem experiência, venha ser AeC!
+          </strong>
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <div className="hidden lg:grid lg:grid-cols-3 gap-4">
         <div className="p-1 flex justify-center">
           <Image
             src="/Imagetext.png"
@@ -38,18 +44,18 @@ const Aboutus = () => {
             className="object-contain"
           />
         </div>
-        <div className="p-1 flex justify-center md:col-span-1 lg:col-span-1">
+        <div className="p-1 flex justify-center">
           <Image
-            src="/imagetext2.png"
+            src="/Imagetext2.png"
             alt="Imagem 2"
             width={390}
             height={470}
             className="object-contain"
           />
         </div>
-        <div className="p-1 flex justify-center hidden lg:block">
+        <div className="p-1 flex justify-center">
           <Image
-            src="/imagetext3.png"
+            src="/Imagetext3.png"
             alt="Imagem 3"
             width={390}
             height={470}
@@ -57,8 +63,47 @@ const Aboutus = () => {
           />
         </div>
       </div>
+
+      <div className="lg:hidden mt-6">
+        <Carousel showThumbs={false} showStatus={false} infiniteLoop>
+          <div className="flex justify-center">
+            <div className="max-w-full">
+              <Image
+                src="/Imagetext.png"
+                alt="Imagem 1"
+                width={350}
+                height={350}
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <div className="max-w-full">
+              <Image
+                src="/Imagetext2.png"
+                alt="Imagem 2"
+                width={350}
+                height={350}
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <div className="max-w-full">
+              <Image
+                src="/Imagetext3.png"
+                alt="Imagem 3"
+                width={350}
+                height={350}
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </Carousel>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 justify-center pt-10">
-        <div className="p-6 bg-white border border-gray-400  rounded-xl flex items-center  shadow-2xl mx-auto max-w-3/4">
+        <div className="p-6 bg-white border border-gray-400 rounded-xl flex items-center shadow-2xl mx-auto max-w-3/4">
           <p className="text-xs flex-1 text-customText3 font-bold">
             A AeC foi certificada pela quarta vez como um ótimo lugar para
             trabalhar! Isso significa que nosso cuidado com as pessoas, nossos
@@ -66,30 +111,32 @@ const Aboutus = () => {
             a diferença e o mercado reconhece!
           </p>
           <div className="ml-4">
-            <img
+            <Image
               src="/Image2.png"
               alt="GPTW Logo"
-              width="140"
-              height="200"
+              width={140}
+              height={200}
               className="object-contain"
             />
           </div>
         </div>
         <div className="p-6 bg-white border border-gray-400 rounded-xl flex items-center shadow-2xl mx-auto max-w-3/4 lg:max-w-xl xl:max-w-xl">
-  <p className="text-xs flex-1 text-customText3 font-bold">
-    Em 2023 fomos eleitos pelo Grupo Gestão RH como o CEO e RH mais admirados do Brasil reconhecendo os líderes de empresas que valorizam a gestão de pessoas na estratégia do negócio e, por isso, tem a admiração dos próprios profissionais da área de RH.
-  </p>
-  <div className="ml-4">
-    <img
-      src="/Image3.png"
-      alt="Award Logo"
-      width="140"
-      height="200"
-      className="object-contain"
-    />
-  </div>
-</div>
-
+          <p className="text-xs flex-1 text-customText3 font-bold">
+            Em 2023 fomos eleitos pelo Grupo Gestão RH como o CEO e RH mais
+            admirados do Brasil reconhecendo os líderes de empresas que
+            valorizam a gestão de pessoas na estratégia do negócio e, por isso,
+            tem a admiração dos próprios profissionais da área de RH.
+          </p>
+          <div className="ml-4">
+            <Image
+              src="/Image3.png"
+              alt="Award Logo"
+              width={140}
+              height={200}
+              className="object-contain"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
