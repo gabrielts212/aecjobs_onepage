@@ -50,6 +50,8 @@ const RegisterForm = () => {
     fetchCities();
   }, []);
 
+
+
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
     if (name === "checkboxOptions") {
@@ -61,6 +63,7 @@ const RegisterForm = () => {
       setFormData({ ...formData, [name]: value });
     }
   };
+
 
   const handleModalOpen = () => {
     setIsModalOpen(true);
@@ -289,8 +292,8 @@ const RegisterForm = () => {
           <input
             type="checkbox"
             id="preCadastro"
-            name="true"
-            value="preCadastro"
+            name="concordaPreCadastro"
+            
             checked={formData.checkboxOptions.includes("preCadastro")}
             onChange={handleChange}
             className="mr-2 leading-tight"
@@ -304,8 +307,8 @@ const RegisterForm = () => {
           <input
             type="checkbox"
             id="politicaPrivacidade"
-            value="politicaPrivacidade"
-            name="true"
+      
+            name="concordaPoliticaPrivacidade"
             checked={formData.checkboxOptions.includes("politicaPrivacidade")}
             onChange={handleChange}
             className="mr-2 leading-tight"
