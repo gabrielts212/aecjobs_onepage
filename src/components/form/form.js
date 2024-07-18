@@ -1,4 +1,4 @@
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Modal from "../modal/Modal";
@@ -219,7 +219,6 @@ const RegisterForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-           
             placeholder="Digite seu e-mail aqui"
             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-hoverBlue ${
               errors.name ? "border-red-500" : "border-gray-300"
@@ -238,7 +237,7 @@ const RegisterForm = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            inputRef={phoneRef} 
+            inputRef={phoneRef}
             placeholder="(__)_____-____"
             className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-hoverBlue ${
               errors.name ? "border-red-500" : "border-gray-300"
@@ -322,16 +321,21 @@ const RegisterForm = () => {
             .
           </span>
         </label>
-        <Modal
+        {/* <Modal
           isOpen={isModalOpen}
           onClose={handleModalClose}
-          title="Política de Privacidade"
+          title="Política de Privacidade "
+          className=" text-customText2"
         >
           <p>
-            Aqui está o texto da política de privacidade. Você pode adicionar o
-            conteúdo completo da política de privacidade aqui.
+              1.            OBJETIVO   Este documento tem como objetivo reforçar
+            os cuidados e compromisso com à privacidade e a proteção de dados
+            pessoais, estabelecendo de forma objetiva e clara as regras sobre o
+            Tratamento de Dados Pessoais dos Usuários do Portal de Carreiras da
+            AeC. Assim, será possível compreender como as informações são
+            coletadas, por qual motivo são coletadas e como são compartilhadas.
           </p>
-        </Modal>
+        </Modal> */}
         <input type="hidden" name="s" value={formData.referrer} />
 
         {errors.checkboxOptions && (
