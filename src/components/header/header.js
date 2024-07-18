@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import CustomLink from "../../components/link/link";
-import Link from "next/link";
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,11 +10,21 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleScrollToSection = (event) => {
+    event.preventDefault();
+    const section = document.getElementById('about-us-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setMenuOpen(false); 
+  };
+
+
   return (
     <header className="bg-white shadow">
       <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
         <div className="flex items-center space-x-4">
-          <Link href="/">
+          <CustomLink href="/">
             <div>
               <div className="flex items-center">
                 <Image
@@ -33,7 +43,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-          </Link>
+          </CustomLink>
         </div>
 
         <div className="md:hidden">
@@ -68,7 +78,11 @@ const Header = () => {
             Vagas de Atendimento
           </CustomLink>
 
-          <CustomLink to="/" className="text-blue-900 text-lg font-semibold">
+          <CustomLink
+            href="#about-us-section"
+            onClick={handleScrollToSection}
+            className="text-blue-900 text-lg font-semibold"
+          >
             Quem somos
           </CustomLink>
         </div>
@@ -78,7 +92,7 @@ const Header = () => {
         <div className="fixed inset-0 z-50 flex flex-col bg-white">
           <div className="flex flex-col items-center justify-start h-full pt-20 space-y-4">
             <CustomLink
-              to="/"
+              to="https://sou.aec.com.br/"
               className="text-blue-900 text-lg font-semibold"
               target="_blank"
               rel="noopener noreferrer"
@@ -86,9 +100,13 @@ const Header = () => {
               Vagas de Atendimento
             </CustomLink>
 
-            <CustomLink to="/" className="text-blue-900 text-lg font-semibold">
-              Quem somos
-            </CustomLink>
+            <CustomLink
+            href="#about-us-section"
+            onClick={handleScrollToSection}
+            className="text-blue-900 text-lg font-semibold"
+          >
+            Quem somos
+          </CustomLink>
           </div>
 
           <button

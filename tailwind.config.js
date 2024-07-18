@@ -8,19 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customBlue: '#80DEF2',
-        customText1: '#003F5F',
-        customText2: '#005DAA', 
-        customText3: '#003F5F', 
-        customText4: '#378DFF', 
-        
-        hoverBlue: '#003F5F',
+        customBlue: "#80DEF2",
+        customText1: "#003F5F",
+        customText2: "#005DAA",
+        customText3: "#003F5F",
+        customText4: "#378DFF",
+        hoverBlue: "#003F5F",
       },
     },
   },
   variants: {
     extend: {
-      borderColor: ['hover'],
+      borderColor: ["hover"],
     },
   },
   plugins: [],

@@ -95,14 +95,14 @@ const RegisterForm = () => {
 
     if (!formData.city) newErrors.city = "Selecione uma cidade válida";
 
-    // if (!formData.checkboxOptions.includes("preCadastro")) {
-    //   newErrors.checkboxOptions = "Aceitar o pré-cadastro é obrigatório.";
-    // }
+    if (!formData.checkboxOptions.includes("preCadastro")) {
+      newErrors.checkboxOptions = "Aceitar o pré-cadastro é obrigatório.";
+    }
 
-    // if (!formData.checkboxOptions.includes("politicaPrivacidade")) {
-    //   newErrors.checkboxOptions =
-    //     "Aceitar a política de privacidade é obrigatório.";
-    // }
+    if (!formData.checkboxOptions.includes("politicaPrivacidade")) {
+      newErrors.checkboxOptions =
+        "Aceitar a política de privacidade é obrigatório.";
+    }
 
     return newErrors;
   };
@@ -181,7 +181,7 @@ const RegisterForm = () => {
           Nome*
           <input
             type="text"
-            name="name"
+            name="nome"
             value={formData.name}
             onChange={handleChange}
             placeholder="Digite seu nome aqui"
@@ -234,7 +234,7 @@ const RegisterForm = () => {
             mask="(99) 99999-9999"
             maskChar=""
             type="text"
-            name="phone"
+            name="telefone"
             value={formData.phone}
             onChange={handleChange}
             inputRef={phoneRef}
@@ -253,7 +253,7 @@ const RegisterForm = () => {
           <div className="relative">
             <select
               type="text"
-              name="city"
+              name="cidadeId"
               value={formData.city}
               onChange={handleChange}
               className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hover:border-hoverBlue ${
@@ -265,7 +265,7 @@ const RegisterForm = () => {
                 Selecione a cidade
               </option>
               {cities.map((city) => (
-                <option key={city.Id} value={city.Estado}>
+                <option key={city.Id} value={city.Id}>
                   {city.Nome}
                 </option>
               ))}
@@ -289,7 +289,7 @@ const RegisterForm = () => {
           <input
             type="checkbox"
             id="preCadastro"
-            name="checkboxOptions"
+            name="true"
             value="preCadastro"
             checked={formData.checkboxOptions.includes("preCadastro")}
             onChange={handleChange}
@@ -305,12 +305,15 @@ const RegisterForm = () => {
             type="checkbox"
             id="politicaPrivacidade"
             value="politicaPrivacidade"
-            name="checkboxOptions"
+            name="true"
             checked={formData.checkboxOptions.includes("politicaPrivacidade")}
             onChange={handleChange}
             className="mr-2 leading-tight"
           />
           <span className="text-xs text-customText3">
+
+
+
             Eu li e concordo com a{" "}
             <span
               className="text-xs text-customText4 cursor-pointer"
@@ -321,6 +324,8 @@ const RegisterForm = () => {
             .
           </span>
         </label>
+
+ <Modal isOpen={isModalOpen} onClose={handleModalClose} />
         {/* <Modal
           isOpen={isModalOpen}
           onClose={handleModalClose}
@@ -336,6 +341,8 @@ const RegisterForm = () => {
             coletadas, por qual motivo são coletadas e como são compartilhadas.
           </p>
         </Modal> */}
+
+
         <input type="hidden" name="s" value={formData.referrer} />
 
         {errors.checkboxOptions && (
@@ -343,12 +350,22 @@ const RegisterForm = () => {
             {errors.checkboxOptions}
           </p>
         )}
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-xl hover:bg-blue-700 focus:outline-none focus:shadow-outline mt-4"
-        >
-          Cadastrar
-        </button>
+
+
+<button
+  type="submit"
+  className="w-full bg-customText1 text-white py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline mt-4 font-bold border border-customText1 hover:bg-white hover:text-customText1 hover:border-customText1 transition-colors duration-300"
+>
+  Cadastrar
+</button>
+
+
+
+
+
+
+
+
         <p className="mt-4 text-center text-customText3">
           Já possui cadastro?{" "}
           <a

@@ -74,6 +74,7 @@ const Aboutus = () => {
                 width={350}
                 height={350}
                 className="object-contain"
+                style={{ width: "350px", height: "350px" }}
               />
             </div>
           </div>
@@ -85,6 +86,7 @@ const Aboutus = () => {
                 width={350}
                 height={350}
                 className="object-contain"
+                style={{ width: "350px", height: "350px" }}
               />
             </div>
           </div>
@@ -96,6 +98,7 @@ const Aboutus = () => {
                 width={350}
                 height={350}
                 className="object-contain"
+                style={{ width: "350px", height: "350px" }}
               />
             </div>
           </div>
@@ -114,9 +117,10 @@ const Aboutus = () => {
             <Image
               src="/Image2.png"
               alt="GPTW Logo"
-              width={140}
+              width={143}
               height={200}
               className="object-contain"
+              style={{ width: "140px", height: "143px" }}
             />
           </div>
         </div>
@@ -131,9 +135,10 @@ const Aboutus = () => {
             <Image
               src="/Image3.png"
               alt="Award Logo"
-              width={140}
+              width={143}
               height={200}
               className="object-contain"
+              style={{ width: "140px", height: "143px" }}
             />
           </div>
         </div>
