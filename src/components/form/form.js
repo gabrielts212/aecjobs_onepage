@@ -111,8 +111,8 @@ const RegisterForm = () => {
 
 
     
-    if (!formData.concordaPreCadastro) newErrors.concordaPreCadastro = '';
-    if (!formData.concordaPoliticaPrivacidade) newErrors.concordaPoliticaPrivacidade = '';
+    // if (!formData.concordaPreCadastro) newErrors.concordaPreCadastro = '';
+    // if (!formData.concordaPoliticaPrivacidade) newErrors.concordaPoliticaPrivacidade = '';
     return newErrors;
   };
 
@@ -341,8 +341,8 @@ const RegisterForm = () => {
             disabled={isButtonDisabled}
             className={`w-full py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline mt-4 font-bold border transition-colors duration-300 ${
               isButtonDisabled
-                ? "bg-gray-400 text-white border-gray-400"
-                : "bg-customText1 text-white border-customText1 hover:bg-white hover:text-customText1 hover:border-customText1"
+                ? "bg-gray-300 text-gray-500 border-gray-400"
+                : "bg-customText1 text-black border-customText1 hover:bg-white hover:text-customText1 hover:border-customText1"
             }`}
           >
             Cadastrar

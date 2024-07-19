@@ -2,54 +2,46 @@ import React from "react";
 
 const RegisterPage = ({ form }) => {
   return (
-    <div className="relative min-h-screen">
-     
-      {/* <div
+    <div className="relative min-h-screen flex flex-col lg:flex-row">
+      <div
         className="absolute inset-0 z-10"
         style={{
-          backgroundImage: "url(background2.png)",
-          width: "100%",
-          height: "50%",
-        }}
-      ></div> */}
-      <div
-  className="absolute inset-0 z-30"
-  style={{
-    backgroundImage: "url(/frame2.png)",
-    // backgroundSize: "cover", 
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center", 
-    width: "100%", 
-    height: "100%", 
-  }}
-></div>
-
-      {/* <div
-        className="absolute bottom-0 left-0 right-0 z-30"
-        style={{
-          backgroundImage: "url(/background1.png)",
+          backgroundImage: "url('/backgroundhome.svg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          width: "100%",
+          height: "100%",
+        }}
+      ></div>
+
+      <div
+        className="absolute inset-0 z-10 block lg:hidden"
+        style={{
+          backgroundImage: "url('/backgroundmobile.png')",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          width: "100%",
           height: "80%",
         }}
-      ></div> */}
+      ></div>
 
-     
-      <div className="relative z-40 flex justify-end items-center min-h-screen  lg:">
-        <div className="w-full max-w-2xl p-6 rounded-lg flex flex-col md:flex-row items-center md:items-start bg-opacity-75 md:bg-opacity-0 pb-20">
-          <div className="md:w-1/2 p-4 "></div>
-          <div className="w-full  p-4">{form}</div>
+      <div className="absolute bottom-0 w-full flex flex-col lg:flex-row items-center lg:justify-center lg:space-x-4 bg-opacity-50 bg-white p-4 z-50">
+        <div className="lg:w-1/2 w-full flex items-center justify-center lg:order-1 order-1">
+          <img
+            src="/pngcheck.png"
+            alt="Imagem"
+            className="w-3/4 h-auto lg:w-full lg:max-w-sm mx-auto"
+          />
+        </div>
+        <div className="lg:w-1/2 w-full lg:order-2 order-2 text-center lg:text-left mt-4 lg:mt-0">
+          <p className="text-customText3 text-lg lg:text-xl font-medium">
+            Junte-se a mais de 50 mil colaboradores AeC.
+          </p>
         </div>
       </div>
 
-     
-      <div className="absolute bottom-0 left-0 right-0 p-4 flex justify-center items-center bg-white bg-opacity-75">
-        
-      </div>
-
-    
-      <div className="absolute bottom-0 left-0 right-0 p-4 flex justify-center">
-        
+      <div className="absolute bottom-16 pb-20 right-1 z-50 w-full max-w-md mx-auto px-4">
+        <div className="">{form}</div>
       </div>
     </div>
   );
