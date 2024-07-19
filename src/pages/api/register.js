@@ -3,16 +3,26 @@ export default function handler(req, res) {
     return res.status(405).json({ message: "Método não permitido" });
   }
 
-  const { name, cpf, email, phone, city, checkboxOptions, referrer } = req.body;
-
-  console.log("Dados recebidos no servidor:", {
-    name,
+  const {
+    nome, 
     cpf,
     email,
-    phone,
-    city,
-    checkboxOptions,
-    referrer,
+    telefone, 
+    cidadeId, 
+    concordaPreCadastro,
+    concordaPoliticaPrivacidade,
+    s,
+  } = req.body;
+
+  console.log("Dados recebidos no servidor:", {
+    nome,
+    cpf,
+    email,
+    telefone,
+    cidadeId,
+    concordaPreCadastro,
+    concordaPoliticaPrivacidade,
+    s,
   });
 
   const messages = [
@@ -20,20 +30,18 @@ export default function handler(req, res) {
   ];
 
   if (
-    !name ||
+    !nome ||
     !cpf ||
     !email ||
-    !phone ||
-    !city ||
-    checkboxOptions.length === 0 ||
-    !referrer
+    !telefone ||
+    !cidadeId ||
+    !concordaPreCadastro ||
+    !concordaPoliticaPrivacidade ||
+    !s
   ) {
-    return res
-      .status(400)
-      .json({
-        message:
-          "Erro ao cadastrar o usuário. Verifique os campos e tente novamente.",
-      });
+    return res.status(400).json({
+      message: "Erro ao cadastrar o usuário. Verifique os campos e tente novamente.",
+    });
   }
 
   const existingUsers = [
