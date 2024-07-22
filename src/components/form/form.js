@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from 'next/router';
-import Modal from '../modal/Modal';
+import ModalPrivacidade from '../modal/Modal';
 import InputMask from "react-input-mask";
 
 
@@ -25,9 +25,18 @@ const RegisterForm = () => {
   const router = useRouter();
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+  const [isPrivacyPolicyModalOpen, setPrivacyPolicyModalOpen] = useState(false);
+  const [cities, setCities] = useState([]);
+
+  const handlePrivacyPolicyModalOpen = () => {
+    setPrivacyPolicyModalOpen(true);
+  };
+
+  const handlePrivacyPolicyModalClose = () => {
+    setPrivacyPolicyModalOpen(false);
+  };
   const cpfRef = useRef(null);
   const phoneRef = useRef(null);
-  const [cities, setCities] = useState([]);
   
   // const handleInputChange = (e) => {
   //   const { name, value } = e.target;
@@ -111,8 +120,7 @@ const RegisterForm = () => {
 
 
     
-    // if (!formData.concordaPreCadastro) newErrors.concordaPreCadastro = '';
-    // if (!formData.concordaPoliticaPrivacidade) newErrors.concordaPoliticaPrivacidade = '';
+
     return newErrors;
   };
 
@@ -132,7 +140,6 @@ const RegisterForm = () => {
     };
     return mapping[origemAbreviado] || 'Desconhecido';
   };
-
 
 
   const handleSubmit = async (e) => {
@@ -173,6 +180,7 @@ const RegisterForm = () => {
       router.push('/');
     }
   };
+
 
   return (
     <div>
@@ -249,6 +257,7 @@ const RegisterForm = () => {
 
 
 
+      
         <label className="block text-customText3 text-sm mb-2">
           Cidade onde deseja trabalhar*
           <div className="relative">
@@ -291,49 +300,53 @@ const RegisterForm = () => {
 
 
 
-        <label className="block text-gray-700 text-sm mb-2 flex items-center">
-          <input
-            type="checkbox"
-            name="concordaPreCadastro"
-            checked={formData.concordaPreCadastro}
-            onChange={handleChange}
-            className="mr-2 leading-tight"
-          />
-          <span className="text-xs text-customText3">
-            Aceito realizar o pré-cadastro no SOU AeC e ser contatado pela AeC para vagas de atendimento.
-          </span>
-          {errors.concordaPreCadastro && (
-            <p className="text-red-500 text-xs italic ml-2">
-              {errors.concordaPreCadastro}
-            </p>
-          )}
-        </label>
+        <div className="block text-gray-700 text-sm mb-2 flex items-start w-full">
+  <input
+    type="checkbox"
+    name="concordaPreCadastro"
+    checked={formData.concordaPreCadastro}
+    onChange={handleChange}
+    className="mr-2 leading-tight mt-1"
+  />
+  <span className="text-xs text-customText3 flex-1">
+    Aceito realizar o pré-cadastro no SOU AeC e ser contatado pela AeC para vagas de atendimento.
+  </span>
+</div>
+{errors.concordaPreCadastro && (
+  <p className="text-red-500 text-xs italic ml-2">
+    {errors.concordaPreCadastro}
+  </p>
+)}
 
-        <label className="block text-gray-700 text-sm mb-2 flex items-center">
-          <input
-            type="checkbox"
-            name="concordaPoliticaPrivacidade"
-            checked={formData.concordaPoliticaPrivacidade}
-            onChange={handleChange}
-            className="mr-2 leading-tight"
-          />
-          <span className="text-xs text-customText3">
-            Eu li e concordo com a{' '}
-            <span
-              className="text-xs text-customText4 cursor-pointer"
-              onClick={handleModalOpen}
-            >
-              Política de Privacidade
-            </span>.
-          </span>
-          {/* <input type="hidden" name="s" value={formData.s} /> */}
 
-          {errors.concordaPoliticaPrivacidade && (
-            <p className="text-red-500 text-xs italic ml-2">
-              {errors.concordaPoliticaPrivacidade}
-            </p>
-          )}
-        </label>
+
+        <div className="block text-gray-700 text-sm mb-2 flex items-start w-full">
+  <input
+    type="checkbox"
+    name="concordaPoliticaPrivacidade"
+    checked={formData.concordaPoliticaPrivacidade}
+    onChange={handleChange}
+    className="mr-2 leading-tight mt-1"
+  />
+  <span className="text-xs text-customText3 flex-1">
+    Eu li e concordo com a{' '}
+    <span
+           className="text-xs text-customText4 cursor-pointer"
+           onClick={(e) => {
+             e.stopPropagation();
+             handlePrivacyPolicyModalOpen();
+           }}
+    >
+      Política de Privacidade
+    </span>.
+  </span>
+</div>
+
+{errors.concordaPoliticaPrivacidade && (
+  <p className="text-red-500 text-xs italic ml-2">
+    {errors.concordaPoliticaPrivacidade}
+  </p>
+)}
 
         <div className="flex justify-center">
           <button
@@ -342,7 +355,7 @@ const RegisterForm = () => {
             className={`w-full py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline mt-4 font-bold border transition-colors duration-300 ${
               isButtonDisabled
                 ? "bg-gray-300 text-gray-500 border-gray-400"
-                : "bg-customText1 text-black border-customText1 hover:bg-white hover:text-customText1 hover:border-customText1"
+                : "bg-customText1  border-customText1 hover:bg-white hover:text-customText1 hover:border-customText1"
             }`}
           >
             Cadastrar
@@ -370,6 +383,10 @@ const RegisterForm = () => {
 </div>
       
       )}
+         <ModalPrivacidade
+        isOpen={isPrivacyPolicyModalOpen}
+        onClose={handlePrivacyPolicyModalClose}
+      />
     </div>
   );
 };

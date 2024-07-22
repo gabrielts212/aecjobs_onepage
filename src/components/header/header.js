@@ -2,7 +2,6 @@ import { useState } from "react";
 import Image from "next/image";
 import CustomLink from "../../components/link/link";
 
-
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -12,13 +11,12 @@ const Header = () => {
 
   const handleScrollToSection = (event) => {
     event.preventDefault();
-    const section = document.getElementById('about-us-section');
+    const section = document.getElementById("about-us-section");
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     }
-    setMenuOpen(false); 
+    setMenuOpen(false);
   };
-
 
   return (
     <header className="bg-white shadow">
@@ -101,12 +99,12 @@ const Header = () => {
             </CustomLink>
 
             <CustomLink
-            href="#about-us-section"
-            onClick={handleScrollToSection}
-            className="text-blue-900 text-lg font-semibold"
-          >
-            Quem somos
-          </CustomLink>
+              href="#about-us-section"
+              onClick={handleScrollToSection}
+              className="text-blue-900 text-lg font-semibold"
+            >
+              Quem somos
+            </CustomLink>
           </div>
 
           <button

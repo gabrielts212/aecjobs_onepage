@@ -25,7 +25,7 @@ const RegisterPage = ({ form }) => {
         }}
       ></div>
 
-      <div className="absolute bottom-0 w-full flex flex-col lg:flex-row items-center lg:justify-center lg:space-x-4 bg-opacity-50 bg-white p-4 z-50">
+      <div className="absolute bottom-0 w-full flex flex-col lg:flex-row items-center lg:justify-center lg:space-x-4 bg-opacity-5 bg-white p-4 z-20">
         <div className="lg:w-1/2 w-full flex items-center justify-center lg:order-1 order-1">
           <img
             src="/pngcheck.png"
@@ -40,7 +40,7 @@ const RegisterPage = ({ form }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-16 pb-20 right-1 z-50 w-full max-w-md mx-auto px-4">
+      <div className="absolute bottom-16 pb-20 right-1 z-20 w-full max-w-md mx-auto px-4">
         <div className="">{form}</div>
       </div>
     </div>

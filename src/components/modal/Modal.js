@@ -5,15 +5,18 @@ const Modal = ({ isOpen, onClose, onContinue }) => {
   
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-2xl mx-4 relative max-h-[80vh] overflow-y-auto">
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 bg-gray-200 text-gray-700 rounded-full p-2 hover:bg-gray-300 focus:outline-none"
-        >
-          &times;
-        </button>
-        <h1 className="text-xl font-semibold text-center mb-4">Política de Privacidade</h1>
+    <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-2xl mx-4 relative max-h-[80vh] overflow-y-auto">
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 bg-transparent text-black text-xl font-bold hover:text-gray-500 focus:outline-none"
+      >
+        &times;
+      </button>
+
+        <h1 className="text-2xl text-customText2  font-semibold text-center mb-4">Política de Privacidade</h1>
         <div className="text-sm text-gray-700 space-y-4">
+        <div className="text-sm text-gray-700 space-y-4 border border-gray-300 p-4">
+
           <h2 className="font-bold">1. OBJETIVO</h2>
           <p>Este documento tem como objetivo reforçar os cuidados e compromisso com à privacidade e a proteção de dados pessoais, estabelecendo de forma objetiva e clara as regras sobre o Tratamento de Dados Pessoais dos Usuários do Portal de Carreiras da AeC. Assim, será possível compreender como as informações são coletadas, por qual motivo são coletadas e como são compartilhadas.</p>
           
@@ -101,14 +104,15 @@ const Modal = ({ isOpen, onClose, onContinue }) => {
         </div>
 
         
-        <button
-                    onClick={onClose}
-
-          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none"
-        >
-          Continuar
-        </button>
-
+        <div className="flex justify-center mt-4">
+          <button
+             onClick={onClose}
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 focus:outline-none"
+          >
+            Continuar
+          </button>
+        </div>
+      </div>
       </div>
     </div>
   );
