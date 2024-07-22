@@ -6,9 +6,10 @@ const RegisterPage = ({ form }) => {
       <div
         className="absolute inset-0 z-10"
         style={{
-          backgroundImage: "url('/backgroundhome.svg')",
+          backgroundImage: "url('/frame10.svg')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
           width: "100%",
           height: "100%",
         }}
@@ -17,11 +18,11 @@ const RegisterPage = ({ form }) => {
       <div
         className="absolute inset-0 z-10 block lg:hidden"
         style={{
-          backgroundImage: "url('/backgroundmobile.png')",
+          backgroundImage: "url('/mobile.png')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           width: "100%",
-          height: "80%",
+          height: "100%",
         }}
       ></div>
 
