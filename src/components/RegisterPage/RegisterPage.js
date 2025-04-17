@@ -4,7 +4,20 @@ const RegisterPage = ({ form }) => {
   return (
     <div className="relative min-h-screen flex flex-col lg:flex-row">
       <div
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-10 block md:hidden"
+        style={{
+          backgroundImage: "url('/mobile.png')",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          width: "100%",
+          height: "100%",
+        }}
+      ></div>
+
+
+      <div
+        className="absolute inset-0 z-10 hidden md:block xl:hidden"
         style={{
           backgroundImage: "url('/frame10.svg')",
           backgroundSize: "cover",
@@ -16,11 +29,12 @@ const RegisterPage = ({ form }) => {
       ></div>
 
       <div
-        className="absolute inset-0 z-10 block lg:hidden"
+        className="absolute inset-0 z-10 hidden xl:block"
         style={{
-          backgroundImage: "url('/mobile.png')",
+          backgroundImage: "url('/frame10.svg')",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
           width: "100%",
           height: "100%",
         }}
